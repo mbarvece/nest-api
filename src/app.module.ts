@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TuitsModule } from './modules/tuits/tuits.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true, //^ Esto es solo para este test, ya q sincroniza las entidades con la base
     }),
+    UsersModule,
   ],
 })
 export class AppModule {}

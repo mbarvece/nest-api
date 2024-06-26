@@ -170,6 +170,13 @@ ORM sql serever
 $ npm i typeorm mssql @nestjs/typeorm
 
 
+
+$ nest g mo modules/users
+
+
+
+
+
 # Codigo Fuente
 
 https://github.com/MarluanEspiritusanto/tuitter-api-nestjs-course
