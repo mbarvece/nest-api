@@ -1,0 +1,17 @@
+meta {
+  name: [TUITS] update tuit
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseURL}}/tuits/3
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "message": "muevo mensaje 3"
+  }
+}

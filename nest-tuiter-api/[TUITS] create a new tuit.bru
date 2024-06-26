@@ -1,0 +1,18 @@
+meta {
+  name: [TUITS] create a new tuit
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseURL}}/tuits
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "message": "Hello from body drrrr"
+    // "caca":"Esno no lo toma por el whitelist en el mine"
+  }
+}

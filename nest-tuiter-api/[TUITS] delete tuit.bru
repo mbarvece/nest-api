@@ -1,0 +1,17 @@
+meta {
+  name: [TUITS] delete tuit
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseURL}}/tuits/1841
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "message": "Hello from body"
+  }
+}
