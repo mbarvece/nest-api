@@ -12,9 +12,9 @@ async function bootstrap() {
       whitelist: true, //^ Solo deja pasar los metodos de los objetos que esten en la clase
       forbidNonWhitelisted: true, //^ si no machea con el objeto, devuelve un bad request
       forbidUnknownValues: true,
-      transformOptions: {
-        enableImplicitConversion: true,
-      },
+      // transformOptions: {
+      //   enableImplicitConversion: true,
+      // },
     }),
   );
 
