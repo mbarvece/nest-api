@@ -183,6 +183,9 @@ $ npm i --save @nestjs/config
 
 
 
+$ nest g mo database
+
+
 ## Open API
 
 
