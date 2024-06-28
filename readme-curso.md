@@ -175,6 +175,19 @@ $ nest g mo modules/users
 
 
 
+## Configuración nestjs
+
+https://docs.nestjs.com/techniques/configuration
+
+$ npm i --save @nestjs/config
+
+
+
+## Open API
+
+
+https://docs.nestjs.com/openapi/introduction
+
 
 
 # Codigo Fuente
