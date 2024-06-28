@@ -13,7 +13,7 @@ async function bootstrap() {
       forbidNonWhitelisted: true, //^ si no machea con el objeto, devuelve un bad request
       forbidUnknownValues: true,
       transformOptions: {
-        enableImplicitConversion: true,
+        enableImplicitConversion: true, //^ con esto nos aseguramos quelos tipos de ts van a ser siempre los correctos, comno para con la paginacion de getTuis(..)
       },
     }),
   );

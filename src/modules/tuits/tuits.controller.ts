@@ -12,7 +12,7 @@ import {
 } from '@nestjs/common';
 import { TuitsService } from './tuits.service';
 import { Tuit } from './tuits.entity';
-import { CreateTuitDto, UpdateTuitDto } from './dto';
+import { CreateTuitDto, PaginationQueryDto, UpdateTuitDto } from './dto';
 
 //^ Estos decoradores se pueden usar porque en el tsconfig.json esta  "experimentalDecorators": true
 //^ Enruta las peticiones q lleguen atravez de http al recurso tuits
@@ -21,8 +21,8 @@ export class TuitsController {
   constructor(private readonly tuitService: TuitsService) {}
 
   @Get()
-  getTuits(@Query() filterQuery: any): Promise<Tuit[]> {
-    return this.tuitService.getTuits(filterQuery);
+  getTuits(@Query() pagination: PaginationQueryDto): Promise<Tuit[]> {
+    return this.tuitService.getTuits(pagination); //^ en el main.ts tenes q poner el pipe transformOprions
   }
 
   @Get(':id')

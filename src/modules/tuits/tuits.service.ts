@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Tuit } from './tuits.entity';
 
-import { CreateTuitDto, UpdateTuitDto } from './dto';
+import { CreateTuitDto, PaginationQueryDto, UpdateTuitDto } from './dto';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -19,16 +19,21 @@ export class TuitsService {
   //   },
   // ];
 
-  async getTuits(filterQuery: any): Promise<Tuit[]> {
-    const { searchTerm, orderBy } = filterQuery;
-
-    console.log(searchTerm, orderBy);
-
-    return await this.tuitRepository.find();
+  async getTuits({ limit, offset }: PaginationQueryDto): Promise<Tuit[]> {
+    return await this.tuitRepository.find({
+      relations: ['user'], //^ con esto devuele los tuits junto con el usuario relacionado
+      skip: offset,
+      take: limit,
+    });
   }
 
   async getTuit(id: number): Promise<Tuit> {
-    const tuit: Tuit = await this.tuitRepository.findOneBy({ id: id });
+    // const tuit: Tuit = await this.tuitRepository.findOneBy({ id: id });
+
+    const tuit: Tuit = await this.tuitRepository.findOne({
+      where: { id },
+      relations: ['user'],
+    });
 
     if (!tuit) {
       throw new NotFoundException('Tuit no encontrado');

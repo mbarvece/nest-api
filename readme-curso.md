@@ -185,4 +185,4 @@ https://github.com/MarluanEspiritusanto/tuitter-api-nestjs-course
 
 Ultimo:
 
-https://www.youtube.com/watch?v=FPiEDkTwa9k&list=PLzHaXzj_WAym4WR3gBYuy1iew5T3NgL0v&index=41
+https://www.youtube.com/watch?v=FPiEDkTwa9k&list=PLzHaXzj_WAym4WR3gBYuy1iew5T3NgL0v&index=42

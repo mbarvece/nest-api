@@ -5,12 +5,12 @@ meta {
 }
 
 get {
-  url: {{baseURL}}/tuits?orderBy=caca&searchTerm=Nest JS
+  url: {{baseURL}}/tuits?limit=300&offset=1
   body: none
   auth: none
 }
 
 query {
-  orderBy: caca
-  searchTerm: Nest JS
+  limit: 300
+  offset: 1
 }
