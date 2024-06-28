@@ -4,12 +4,14 @@ import { Tuit } from './tuits.entity';
 import { CreateTuitDto, PaginationQueryDto, UpdateTuitDto } from './dto';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { User } from '../users/entities';
 
 @Injectable()
 export class TuitsService {
   //^ con el private, le indicas que va a ser una propiedad solo de esta clase
   constructor(
     @InjectRepository(Tuit) private readonly tuitRepository: Repository<Tuit>,
+    @InjectRepository(User) private readonly userRepository: Repository<User>, //^ojo q hay q ir a tuit.module.ts y agregar el User en los imports al TypeOrmModule
   ) {}
 
   // private tuits: Tuit[] = [
@@ -45,6 +47,7 @@ export class TuitsService {
   async createTuit(createTuitDto: CreateTuitDto): Promise<Tuit> {
     const tuit: Tuit = new Tuit();
     tuit.message = createTuitDto.message;
+    tuit.user = createTuitDto.user as User;
 
     this.tuitRepository.create(tuit);
 
