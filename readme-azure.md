@@ -19,3 +19,10 @@ Agregar a nest como az function
   $ npm install @schematics/angular --save-dev
   $ nest add @nestjs/azure-func-http
 
+
+
+## En azure
+
+client-id: buscar "Azure Active Directory"
+tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AA78629EC30C4CBEBC393EFA73C13609 }}
+subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_27946FCC5B52465085682F105F17EE10 }}
