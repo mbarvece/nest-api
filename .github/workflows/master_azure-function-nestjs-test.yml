@@ -48,5 +48,5 @@ jobs:
         with:
             app-name: 'app-azfunc-nest-test'
             slot-name: "Production"
-            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+            publish-profile: ${{ secrets.AZURE_APP_SERVICE_PUBLISH_PROFILE }}
             package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
