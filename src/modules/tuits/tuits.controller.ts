@@ -18,41 +18,46 @@ import { CreateTuitDto, PaginationQueryDto, UpdateTuitDto } from './dto';
 //^ Enruta las peticiones q lleguen atravez de http al recurso tuits
 @Controller('tuits')
 export class TuitsController {
-  constructor(private readonly tuitService: TuitsService) {}
-
-  @Get()
-  getTuits(@Query() pagination: PaginationQueryDto): Promise<Tuit[]> {
-    return this.tuitService.getTuits(pagination); //^ en el main.ts tenes q poner el pipe transformOprions
-  }
+  //  constructor(private readonly tuitService: TuitsService) {}
 
   @Get(':id')
-  getTuit(@Param('id') id: number): Promise<Tuit> {
-    return this.tuitService.getTuit(id);
+  getTuit(@Param('id') id: string): string {
+    return `Ỳou tuit id is ${id}`;
   }
 
-  @Post()
-  @HttpCode(HttpStatus.CREATED)
-  //^ ojo para q se castee el objeto CreateTuitDto hay q ir a main.ts y agregar un pipe -> app.useGlobalPipes(new ValidationPipe({ transform: true }));
-  createTuit(@Body() createTuitDto: CreateTuitDto): Promise<Tuit> {
-    //^ con el transform true en el pipe del main.ts , lo convierte el body en el objeto CreateTuitDto
+  // @Get()
+  // getTuits(@Query() pagination: PaginationQueryDto): Promise<Tuit[]> {
+  //   return this.tuitService.getTuits(pagination); //^ en el main.ts tenes q poner el pipe transformOprions
+  // }
 
-    console.log('Es CreateTuitDto', createTuitDto instanceof CreateTuitDto);
+  // @Get(':id')
+  // getTuit(@Param('id') id: number): Promise<Tuit> {
+  //   return this.tuitService.getTuit(id);
+  // }
 
-    return this.tuitService.createTuit(createTuitDto);
-  }
+  // @Post()
+  // @HttpCode(HttpStatus.CREATED)
+  // //^ ojo para q se castee el objeto CreateTuitDto hay q ir a main.ts y agregar un pipe -> app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  // createTuit(@Body() createTuitDto: CreateTuitDto): Promise<Tuit> {
+  //   //^ con el transform true en el pipe del main.ts , lo convierte el body en el objeto CreateTuitDto
 
-  @Patch(':id')
-  updateTuit(
-    @Param('id') id: number,
-    @Body() updateTuitDto: UpdateTuitDto,
-  ): Promise<Tuit> {
-    return this.tuitService.updateTuit(id, updateTuitDto);
-  }
+  //   console.log('Es CreateTuitDto', createTuitDto instanceof CreateTuitDto);
 
-  @Delete(':id')
-  deleteTuit(@Param('id') id: number): Promise<void> {
-    return this.tuitService.removeTuit(id);
-  }
+  //   return this.tuitService.createTuit(createTuitDto);
+  // }
+
+  // @Patch(':id')
+  // updateTuit(
+  //   @Param('id') id: number,
+  //   @Body() updateTuitDto: UpdateTuitDto,
+  // ): Promise<Tuit> {
+  //   return this.tuitService.updateTuit(id, updateTuitDto);
+  // }
+
+  // @Delete(':id')
+  // deleteTuit(@Param('id') id: number): Promise<void> {
+  //   return this.tuitService.removeTuit(id);
+  // }
 
   //^ SON SIN USAR EL SERVICE
 

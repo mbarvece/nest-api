@@ -2,6 +2,10 @@
 
 https://www.youtube.com/watch?v=nAhMDfDSTgA&list=PLzHaXzj_WAym4WR3gBYuy1iew5T3NgL0v
 
+
+Otro curso de nest para ver:
+    https://www.youtube.com/watch?v=W4_oH3anYHU
+
 ### Instalación node
 
 [nodejs.org](https://nodejs.org/en)
@@ -199,6 +203,11 @@ https://github.com/MarluanEspiritusanto/tuitter-api-nestjs-course
 
 
 
-Ultimo:
+### Ultimo:
 
 https://www.youtube.com/watch?v=FPiEDkTwa9k&list=PLzHaXzj_WAym4WR3gBYuy1iew5T3NgL0v&index=42
+
+
+### Azure functions
+
+https://www.youtube.com/watch?v=IYmGp0bLu2w&list=PLzHaXzj_WAymv8Vu5CmiRgIUu3OB6Lep5&index=1
