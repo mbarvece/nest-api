@@ -68,11 +68,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_62A1D836260D4A59AE0FCFC199278C07 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_91EC221857E347C5944052886AB3E521 }}
 
-      - name: 'Run Azure Functions Action'
+      - name: 'Run Azure Functions Action MTN'
         uses: Azure/functions-action@v1
         id: fa
         with:
           app-name: 'app-azfunc-nest-test'
           slot-name: 'Production'
+          publish-profile: ${{ secrets.AZURE_APP_SERVICE_MTN }}
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           
