@@ -6,6 +6,14 @@
             "name": "DEBUG mtn",
             "request": "launch",
             "type": "node-terminal"
+        },
+        {
+            "name": "Attach to Node Functions",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9229,
+            "preLaunchTask": "func: host start"
         }
     ]
 }
