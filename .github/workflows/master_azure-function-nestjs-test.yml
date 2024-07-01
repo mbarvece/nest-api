@@ -14,15 +14,11 @@ env:
   NODE_VERSION: '20.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
     steps:
       - name: 'Checkout GitHub Action'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node ${{ env.NODE_VERSION }} Environment
         uses: actions/setup-node@v3
@@ -37,18 +33,20 @@ jobs:
           npm run build --if-present
           npm run test --if-present
           popd
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6CEC35EC31974F3596B0FEEDF67361C6 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AA78629EC30C4CBEBC393EFA73C13609 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_27946FCC5B52465085682F105F17EE10 }}
+    #   - name: 'Run Azure Functions Action'
+    #     uses: Azure/functions-action@v1
+    #     id: fa
+    #     with:
+    #       app-name: 'app-azfunc-nest-test'
+    #       slot-name: 'Production'
+    #       package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+    #       publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_798C9EA239EB4598A006DE119AD1C60F }}
 
-      - name: 'Run Azure Functions Action'
-        uses: Azure/functions-action@v1
-        id: fa
+      - name: "Deploy to Azure Web App"
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
         with:
-          app-name: 'app-azfunc-nest-test'
-          slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          
+            app-name: 'app-azfunc-nest-test'
+            slot-name: "Production"
+            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_798C9EA239EB4598A006DE119AD1C60F }}
+            package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
