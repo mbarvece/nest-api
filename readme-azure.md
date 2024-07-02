@@ -23,6 +23,7 @@ Agregar a nest como az function
 
 ## En azure
 
-client-id: buscar "Azure Active Directory"
-tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AA78629EC30C4CBEBC393EFA73C13609 }}
-subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_27946FCC5B52465085682F105F17EE10 }}
+1. Crear azure function app
+2. Ir a la az funcion creada -> Authentication -> autenticar el repo de github 
+3. Ir a Create Management Credentials -> Managed Identities
+4. Ir a la az funcion creada -> Deployment Center -> Seleccionar github -> Seleccionar el repo -> Seleccionar la rama -> Seleccionar el directorio -> Seleccionar el runtime stack -> Seleccionar el runtime version
