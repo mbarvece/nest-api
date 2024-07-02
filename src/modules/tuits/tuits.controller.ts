@@ -22,7 +22,7 @@ export class TuitsController {
 
   @Get(':id')
   getTuit(@Param('id') id: string): string {
-    return `Ỳou tuit id is ${id}  W9`;
+    return `Ỳou tuit id is ${id}  W10`;
   }
 
   // @Get()
