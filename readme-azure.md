@@ -25,5 +25,5 @@ Agregar a nest como az function
 
 1. Crear azure function app
 2. Ir a la az funcion creada -> Authentication -> autenticar el repo de github 
-3. Ir a Create Management Credentials -> Managed Identities
+3. Ir a Create Management Credentials -> Managed Identities y en Subject identifier poner repo:mbarvece/nest-api:environment:Production
 4. Ir a la az funcion creada -> Deployment Center -> Seleccionar github -> Seleccionar el repo -> Seleccionar la rama -> Seleccionar el directorio -> Seleccionar el runtime stack -> Seleccionar el runtime version
