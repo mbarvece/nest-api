@@ -29,3 +29,7 @@ Agregar a nest como az function
 4. Ir a la az funcion creada -> Deployment Center -> Seleccionar github -> Seleccionar el repo -> Seleccionar la rama -> Seleccionar el directorio -> Seleccionar el runtime stack -> Seleccionar el runtime version
 
 4. borré los storage accounts que se crearon
+
+
+
+https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-github-actions?tabs=linux%2Cdotnet&pivots=method-manual
