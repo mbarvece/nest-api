@@ -202,3 +202,30 @@ https://github.com/MarluanEspiritusanto/tuitter-api-nestjs-course
 Ultimo:
 
 https://www.youtube.com/watch?v=FPiEDkTwa9k&list=PLzHaXzj_WAym4WR3gBYuy1iew5T3NgL0v&index=42
+
+
+
+# PASOS:
+* --no-spec -> es para no crear el test
+
+## Module
+$ nest g mo modules/xxx --no-spec
+* modificar index.ts
+
+
+## Controller
+$ nest g co controllers/xxx --no-spec
+* modificar index.ts
+
+## Service
+$ nest g s services/xxx --no-spec
+* modificar index.ts
+
+## Entity
+$ nest g cl entities/xxx.entity --no-spec
+* modificar index.ts
+
+## DTO
+$ nest g cl dto/apirport-dto --no-spec
+* modificar index.ts
+
