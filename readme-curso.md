@@ -211,3 +211,46 @@ https://www.youtube.com/watch?v=FPiEDkTwa9k&list=PLzHaXzj_WAym4WR3gBYuy1iew5T3Ng
 ### Azure functions
 
 https://www.youtube.com/watch?v=IYmGp0bLu2w&list=PLzHaXzj_WAymv8Vu5CmiRgIUu3OB6Lep5&index=1
+
+
+
+Agregar a nest como az function
+
+  https://www.npmjs.com/package/@nestjs/azure-func-http
+
+  
+  ## package.json 
+  
+    modificar -> "reflect-metadata": "^0.1.14",
+
+    - https://github.com/rbuckton/reflect-metadata/tree/v0.1.14
+
+
+  $ npm install -g @angular/cli
+  $ npm install @schematics/angular --save-dev
+  $ nest add @nestjs/azure-func-http
+
+  
+# PASOS:
+* --no-spec -> es para no crear el test
+
+## Module
+$ nest g mo modules/xxx --no-spec
+* modificar index.ts
+
+
+## Controller
+$ nest g co controllers/xxx --no-spec
+* modificar index.ts
+
+## Service
+$ nest g s services/xxx --no-spec
+* modificar index.ts
+
+## Entity
+$ nest g cl entities/xxx.entity --no-spec
+* modificar index.ts
+
+## DTO
+$ nest g cl dto/apirport-dto --no-spec
+* modificar index.ts
