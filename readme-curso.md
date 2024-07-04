@@ -214,7 +214,7 @@ https://www.youtube.com/watch?v=IYmGp0bLu2w&list=PLzHaXzj_WAymv8Vu5CmiRgIUu3OB6L
 
 
 
-Agregar a nest como az function
+### Agregar a nest como az function
 
   https://www.npmjs.com/package/@nestjs/azure-func-http
 
@@ -230,7 +230,7 @@ Agregar a nest como az function
   $ npm install @schematics/angular --save-dev
   $ nest add @nestjs/azure-func-http
 
-  
+
 # PASOS:
 * --no-spec -> es para no crear el test
 
