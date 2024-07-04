@@ -33,3 +33,8 @@ Agregar a nest como az function
 
 
 https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-github-actions?tabs=linux%2Cdotnet&pivots=method-manual
+
+Create resource group
+aa2000-testing-resource-group
+
+Create Function App
